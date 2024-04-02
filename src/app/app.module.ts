@@ -7,6 +7,7 @@ import { CoreModule } from './Core/core.module';
 import { SharedModule } from './Shared/shared.module';
 import { ProductListComponent } from './Public/product-list.component';
 import { ProductDetailsComponent } from './Public/product-details.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProductDetailsComponent } from './Public/product-details.component';
     BrowserModule,
     AppRoutingModule,
     CoreModule,
-    SharedModule
+    SharedModule,
+    NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]
