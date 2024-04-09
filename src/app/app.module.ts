@@ -11,13 +11,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { OrdersComponent } from './Public/orders.component';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { ReactiveFormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
+import { JwtInterceptor } from './Core/Interceptors/jwt.interceptor';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { CustomerComponent } from './Public/customer.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ProductListComponent,
     ProductDetailsComponent,
-    OrdersComponent
+    OrdersComponent,
+    CustomerComponent
   ],
   imports: [
     BrowserModule,
@@ -26,9 +32,13 @@ import { HttpClientModule } from '@angular/common/http';
     SharedModule,
     NgbModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    ReactiveFormsModule,
+    RouterModule
   ],
-  providers: [],
+  providers: [
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

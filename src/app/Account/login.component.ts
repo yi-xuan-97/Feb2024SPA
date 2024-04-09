@@ -4,19 +4,22 @@ import { Login } from '../Shared/Models/Account';
 import { HttpClient } from '@angular/common/http';
 import { Token } from '../Shared/Models/Token';
 import { LoginService } from '../Core/Services/login.service';
+import { AccountService } from '../Core/Services/account.service';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
 })
 export class LoginComponent {
-  model: Login = { username: '', password: '' };
+  model: Login = { username: "", password: "" };
   invalidLogin: boolean = false;
   flag: boolean = false;
-  token: any = { username: '', jwtToken: '', expiresIn: 0 };
+  token: any = { username: "", jwtToken: "", expiresIn: 0 };
 
-  constructor(private http: HttpClient, private loginservice: LoginService) {}
+  constructor(private http: HttpClient, private loginservice: LoginService, private accountservice: AccountService, private router:Router) {}
 
+  // FIXME: Why response is object instead of Token object
   Login(form: NgForm) {
     const credentials: Login = {
       username: form.value.userName,
@@ -29,9 +32,17 @@ export class LoginComponent {
         console.log('Login successful', response);
         this.token = response;
         
-        console.log(typeof response);
-        console.log(typeof this.token);
-        console.log(this.token.jwtToken);
+        if (this.token.jwtToken != "" && this.token.expiresIn > 0){
+
+          localStorage.setItem("token",this.token?.jwtToken?? '');
+          localStorage.setItem("expiration", this.token?.expiresIn?.toString()?? '');
+          localStorage.setItem("loginTime", Date.now().toString());
+  
+          this.accountservice.populateUserInfoFromToken();
+        }
+        
+        console.log(localStorage.getItem("token"));
+        this.router.navigateByUrl("/");
       },
       error: (error) => {
         // Handle error, such as showing an error message.

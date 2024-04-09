@@ -1,0 +1,30 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #2c3e50;
+    margin-bottom: 24px;
+  }
+  
+  .user-item {
+    background-color: #ffffff;
+    border: 1px solid #e7e7e7;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-item p {
+    margin: 8px 0;
+    font-size: 14px;
+    color: #333;
+  }
+  
+  .user-item p:nth-child(odd) {
+    font-weight: bold;
+  }
+  

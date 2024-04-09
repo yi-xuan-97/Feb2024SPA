@@ -1,0 +1,11 @@
+<body>
+  <h2>Here is our list of products:</h2>
+  <div *ngFor="let user of usersList" class="user-item">
+    <p>Name: {{ user.name }}</p>
+    <p>Email: {{ user.email }}</p>
+    <p>Address: {{ user.address }}</p>
+    <p>PhoneNumber: {{ user.phoneNumber }}</p>
+    <p>Password: {{ user.password }}</p>
+    <p>Role: {{ user.role }}</p>
+  </div>
+</body>
