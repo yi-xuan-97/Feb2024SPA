@@ -31,4 +31,8 @@ export class ProductDetailsComponent implements OnInit{
       .subscribe((data) => (this.product = data));
 
   }
+
+  isEmptyObject(obj: object): boolean {
+    return Object.keys(obj).length === 0;
+  }
 }

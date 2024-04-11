@@ -1,5 +1,8 @@
 <body>
-  <h2>Here is our list of products:</h2>
+  <h2>Here is our list of customer:</h2>
+  <div *ngIf="isEmptyObject(usersList)">
+    <h6>Please wait, API loading might take some time:)</h6>
+  </div>
   <div *ngFor="let user of usersList" class="user-item">
     <p>Name: {{ user.name }}</p>
     <p>Email: {{ user.email }}</p>

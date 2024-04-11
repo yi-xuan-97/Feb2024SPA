@@ -23,4 +23,7 @@ export class ProductListComponent implements OnInit {
     this.router.navigate(['/Product', productId]);
   }
 
+  isEmptyObject(obj: object): boolean {
+    return Object.keys(obj).length === 0;
+  }
 }

@@ -14,7 +14,7 @@ export class ProductService {
   getAllProducts():Observable<Product[]>{
     let headers = new HttpHeaders();
     headers = headers.set('Ocp-Apim-Subscription-Key', environment.subscriptionKey);
-    return this.http.get<Product[]>('https://eshopgateway.azure-api.net/product/api/Product',{
+    return this.http.get<Product[]>('https://productcontainer.delightfultree-b8fae9a2.westus.azurecontainerapps.io/api/Product',{
       headers: {'Ocp-Apim-Subscription-Key':environment.subscriptionKey}
     });
   }
@@ -23,7 +23,7 @@ export class ProductService {
   getProductById(id: number):Observable<Product>{
     let headers = new HttpHeaders();
     headers = headers.set('Ocp-Apim-Subscription-Key', environment.subscriptionKey);
-    return this.http.get<Product>('https://eshopgateway.azure-api.net/product/api/Product/byid/'+`${id}`,{
+    return this.http.get<Product>('https://productcontainer.delightfultree-b8fae9a2.westus.azurecontainerapps.io/api/Product/byid/'+`${id}`,{
       headers: {'Ocp-Apim-Subscription-Key':environment.subscriptionKey}
     });
   }

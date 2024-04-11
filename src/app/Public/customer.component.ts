@@ -21,4 +21,8 @@ export class CustomerComponent {
       .subscribe((data) => (this.usersList = data));
   } 
 
+  isEmptyObject(obj: object): boolean {
+    return Object.keys(obj).length === 0;
+  }
+
 }

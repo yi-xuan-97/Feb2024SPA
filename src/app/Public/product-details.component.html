@@ -1,5 +1,8 @@
 <body>
   <div class="product">
+    <div *ngIf="isEmptyObject(product)">
+      <h6>Please wait, API loading might take some time:)</h6>
+    </div>
     <div class="product-info">
       <h3>{{ product.name }}</h3>
       <p>Price: {{ product.price }}</p>
