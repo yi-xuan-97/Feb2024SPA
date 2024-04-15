@@ -1,5 +1,6 @@
 <body>
   <h2>Here is our list of products:</h2>
+  <p *ngIf="addItemMessage" class="add-item-message">{{ addItemMessage }}</p>
   <div *ngIf="isEmptyObject(productsList)">
     <h6>Please wait, API loading might take some time:)</h6>
   </div>
@@ -9,6 +10,7 @@
     <a (click)="onDetailClick(product.id)" class="btn btn-primary"
       >Detail</a
     >
+    <button (click)="addToCart(product)" class="btn btn-secondary">Add to Cart</button>
   </div>
 
   <div *ngIf="productsList.length < 10">

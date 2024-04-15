@@ -1,0 +1,94 @@
+/* General styles for the login container */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 70vh; /* Makes sure it takes at least the full height of the viewport */
+    margin-top: 0;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Adds shadow for 3D effect */
+    border-radius: 8px; /* Rounded corners for the card */
+    background: white; /* White background for the card */
+    padding: 20px;
+    width: 60%;
+}
+
+.card h4 {
+    text-align: center; /* Center-aligns the title */
+    color: #333; /* Dark gray color for text */
+}
+
+/* Adjusts the row and column layout to ensure the form is centered */
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.col-sm-6 {
+    position: relative;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+@media (min-width: 576px) { /* Adjusts for small screens and up */
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}
+
+
+/* Style for form elements */
+.form-group {
+    margin-bottom: 15px; /* Adds space below each form group */
+}
+
+label {
+    display: block; /* Ensures the label is on a new line */
+    margin-bottom: .5rem;
+    color: #666; /* Medium gray color makes it soft for eyes */
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%; /* Full width to fit container */
+    padding: 8px; /* Padding inside the input fields */
+    border: 1px solid #ccc; /* Subtle border color */
+    border-radius: 4px; /* Rounded borders for the input fields */
+    box-sizing: border-box; /* Border-box model for accurate width calculation */
+}
+
+button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%; /* Button width is full container width */
+    font-size: 16px; /* Larger font size for better readability */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker shade on hover for interaction feedback */
+}
+
+/* Alert message styling */
+.alert {
+    text-align: center; /* Centers the text in alert boxes */
+    color: white;
+    margin-top: 20px;
+}
+
+.alert-danger {
+    background-color: #dc3545; /* Bootstrap danger color for errors */
+}
+
+.alert-success {
+    background-color: #28a745; /* Bootstrap success color for successful actions */
+}

@@ -1,0 +1,52 @@
+<div class="intro-container">
+  <header class="intro-header">
+    <h1>Welcome to Our E-Shop!</h1>
+    <p>
+      Bringing the best products right to your doorstep with unmatched
+      convenience and service.
+    </p>
+    <h5>When page loading, please wait for seconds/minutes for API loading.</h5>
+  </header>
+  <main class="intro-main">
+    <section *ngIf="!isLoggedIn">
+      <p>
+        Hello there! Here are some user account you can use for testing out our
+        website!
+      </p>
+      <div class="login-section">
+        <div class="login-info">
+          <h6>Login as user:</h6>
+          <p><strong>Username:</strong> user</p>
+          <p><strong>Password:</strong> user@123</p>
+        </div>
+        <div class="login-info">
+          <h6>Login as admin:</h6>
+          <p><strong>Username:</strong> admin</p>
+          <p><strong>Password:</strong> admin@123</p>
+          <p></p>
+        </div>
+      </div>
+    </section>
+    <section *ngIf="isLoggedIn">
+        <h5>Welcome! You are logged in now!</h5>
+        <h5>Please wait for seconds/minutes for API loading.</h5>
+        <h6>If you loggin as <strong>user</strong>, you will be able to take a look at your orders.</h6>
+        <p>Once check out cart, you will find your order appear in Order page.</p>
+        <h6>If you loggin as <strong>admin</strong>, you will be able to take a look at order and customer list.</h6>
+        <p>Once registered, it will appear in Cutomer page - please use account provdie for testing purpose.</p>
+    </section>
+    <section>
+        <p>
+          We specialize in offering a wide range of high-quality goods, from daily
+          essentials to unique items, ensuring you get the best prices and a
+          seamless shopping experience. Whether you're looking for the latest
+          gadgets, stylish apparel, or practical home solutions, our e-shop is
+          your ultimate online shopping destination.At our eShop, we believe in
+          quality, customer satisfaction, and innovation. Enjoy secure shopping,
+          fast shipping, and easy returns with every purchase. Your happiness is
+          our top priority!
+        </p>
+      </section>
+  </main>
+  
+</div>

@@ -19,7 +19,6 @@ export class LoginComponent {
 
   constructor(private http: HttpClient, private loginservice: LoginService, private accountservice: AccountService, private router:Router) {}
 
-  // FIXME: Why response is object instead of Token object
   Login(form: NgForm) {
     const credentials: Login = {
       username: form.value.userName,
@@ -29,7 +28,6 @@ export class LoginComponent {
     this.loginservice.login(credentials).subscribe({
       next: (response) => {
         // Handle success, such as saving the auth token and redirecting.
-        console.log('Login successful', response);
         this.token = response;
         
         if (this.token.jwtToken != "" && this.token.expiresIn > 0){
@@ -41,7 +39,6 @@ export class LoginComponent {
           this.accountservice.populateUserInfoFromToken();
         }
         
-        console.log(localStorage.getItem("token"));
         this.router.navigateByUrl("/");
       },
       error: (error) => {

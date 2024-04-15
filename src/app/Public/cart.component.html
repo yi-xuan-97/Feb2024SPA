@@ -1,0 +1,35 @@
+<h2>Your Cart</h2>
+<div class="cartContainer" *ngIf="items.length; else emptyCart">
+  <table>
+    <thead>
+      <tr>
+        <th>Product Name</th>
+        <th>Price</th>
+        <th>Amount</th>
+        <th>Total Price</th>
+        <th>Order Date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of items">
+        <td>{{ item.productName }}</td>
+        <td>${{ item.price }}</td>
+        <td>{{ item.amount }}</td>
+        <td>${{ item.totalPrice }}</td>
+        <td>{{ item.orderDate }}</td>
+        <td>
+          <button (click)="removeFromCart(item.productId)">Remove</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <p>Total: ${{ total }}</p>
+  <div class="cart-actions">
+      <button (click)="clearCart()">Clear Cart</button>
+      <button (click)="checkout()" class="checkout-btn">Checkout</button>
+  </div>
+</div>
+<ng-template #emptyCart>
+  <p>Your cart is empty.</p>
+</ng-template>

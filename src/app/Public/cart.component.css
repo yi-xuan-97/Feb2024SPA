@@ -1,0 +1,54 @@
+.cartContainer {
+    margin: 3%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+thead {
+  background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.cart-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  opacity: 0.8;
+}
+
+.checkout-btn {
+  background-color: #4CAF50; /* Green, suggests 'go forward' */
+  color: white;
+}
+
+.clear-cart-btn {
+  background-color: #f44336; /* Red, suggests 'stop' or 'remove' */
+  color: white;
+}
+

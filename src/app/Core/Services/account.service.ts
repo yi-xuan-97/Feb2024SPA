@@ -23,7 +23,6 @@ export class AccountService {
   constructor(private http: HttpClient) {}
 
 
-
   Register(registerData: Register): Observable<boolean> {
     return this.http.post<boolean>(
       'https://customercontainer.delightfultree-b8fae9a2.westus.azurecontainerapps.io/api/Customer',
@@ -74,4 +73,5 @@ export class AccountService {
       this.currentUserSubject.next(decodedToken);
     }
   }
+
 }

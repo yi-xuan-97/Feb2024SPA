@@ -16,6 +16,8 @@ import { RouterModule } from '@angular/router';
 import { JwtInterceptor } from './Core/Interceptors/jwt.interceptor';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { CustomerComponent } from './Public/customer.component';
+import { IntroComponent } from './Public/intro.component';
+import { CartComponent } from './Public/cart.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CustomerComponent } from './Public/customer.component';
     ProductListComponent,
     ProductDetailsComponent,
     OrdersComponent,
-    CustomerComponent
+    CustomerComponent,
+    IntroComponent,
+    CartComponent
   ],
   imports: [
     BrowserModule,
