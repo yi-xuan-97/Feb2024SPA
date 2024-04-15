@@ -36,7 +36,8 @@ export class CartComponent implements OnInit {
     this.cartService.checkOut(this.items).subscribe({
       next: (response) => {     
         console.log(response);
-        this.router.navigateByUrl('/Account/Login');
+        this.router.navigateByUrl('/Order');
+        this.clearCart();
       },
       error: (error) => {
         // Handle error, such as showing an error message.
