@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CartService } from '../Core/Services/cart.service';
 import { CartItem } from '../Shared/Models/CartItem';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cart',
@@ -11,7 +12,7 @@ export class CartComponent implements OnInit {
   items: CartItem[] = [];
   total: number = 0;
 
-  constructor(private cartService: CartService) {}
+  constructor(private cartService: CartService, private router:Router) {}
 
   ngOnInit() {
     this.items = this.cartService.getItems();
@@ -35,6 +36,7 @@ export class CartComponent implements OnInit {
     this.cartService.checkOut(this.items).subscribe({
       next: (response) => {     
         console.log(response);
+        this.router.navigateByUrl('/Account/Login');
       },
       error: (error) => {
         // Handle error, such as showing an error message.
